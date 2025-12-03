@@ -93,7 +93,7 @@ Git y GitHub para control de versiones
 
 📬 Autora
 
-Proyecto realizado por Christel Vial
+Proyecto realizado por Christel Vial (con soporte y guia de IA)
 para el Módulo 2 del curso FrontEnd Trainee SENCE 2025.
 
 
