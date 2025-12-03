@@ -1,63 +1,102 @@
-📌 Weather Frontend — Módulo 2
+🌤️ Weather Frontend — Módulo 2
 
-Proyecto educativo desarrollado para el Módulo 2 del bootcamp.
-Implementa un frontend de clima usando HTML5, Bootstrap y JavaScript.
+Proyecto educativo desarrollado para el Módulo 2 del bootcamp FrontEnd Trainee SENCE 2025.
+Consiste en un pequeño frontend de clima creado con HTML5, Bootstrap 5 y JavaScript, siguiendo los requisitos del módulo.
 
-🚀 Características del MVP
+🚀 Características Principales (MVP)
 
-Página Home con 10+ ciudades (mock data).
+Página Home con 10+ ciudades usando mock data.
 
-Cards con imagen, temperatura y humedad.
+Cards Bootstrap con imagen, temperatura, estado y humedad.
 
-Vista Detalle con pronóstico semanal.
+Vista Detalle con información ampliada + pronóstico semanal.
 
-Navbar + Footer.
+Navegación con hash routing utilizando JavaScript básico.
 
-Navegación usando hash routing.
+Responsive para móvil y escritorio.
 
-Totalmente responsive (móvil + escritorio).
+Navbar + Footer implementados.
 
-Animaciones navideñas ❄️🦌🎅 (bonus decorativo).
+Decoración navideña (nieve + reno) como bonus estético 🎄🦌❄️.
 
-🗂️ Estructura
+📋 Requisitos del Proyecto (resumen)
+Funcionalidad obligatoria
 
+Mostrar 10 o más localidades en Home.
+
+Cards con información del clima.
+
+Al hacer clic en una ciudad → ir a Detalle.
+
+En Detalle se muestra el pronóstico semanal.
+
+Interacción básica con JavaScript.
+
+Diseño responsive (≤420px y ≥1024px).
+
+Tecnologías exigidas
+
+HTML5 semántico.
+
+Bootstrap 5 (grid + utilidades + componentes).
+
+JavaScript vanilla.
+
+Git + GitHub (commits descriptivos).
+
+🗂️ Estructura del Proyecto
 weather/
 │
 ├── index.html
 │
 ├── Assets/
-│   ├── styles.css       <-- efectos de nieve cayendo y reno desplazandose 🎄🦌❄️
-│   ├── cities.js        <-- Archivo de datos de ciudades
-│   └── cities/          <-- Archivo de iconos de ciudades para decorar tarjetas
+│   ├── styles.css        ← nieve, reno y detalles visuales
+│   ├── cities.js         ← datos mock de ciudades
+│   └── cities/           ← íconos decorativos de ciudades
 │        ├── scl.png
-│        ├── tok.png
 │        ├── lon.png
-│        └── ... otros íconos de ciudades
+│        ├── tok.png
+│        └── ...
 │
 └── README.md
 
+🧠 ¿Qué hace la aplicación?
 
-🖥️ Tecnologías
+Permite seleccionar una ciudad desde la página Home.
 
-HTML5 semántico
+Al hacer clic, muestra su información detallada.
 
-CSS + Bootstrap 5
+Incluye temperatura, humedad y una “simulación” de pronóstico semanal.
 
-JavaScript vanilla
+Todo se carga desde datos locales (mock data), no desde una API real.
 
-Git + GitHub
+🛠️ Tecnologías Utilizadas
 
-🧠 ¿Qué hace este proyecto?
+HTML5
 
-Permite elegir una ciudad.
+Bootstrap 5
 
-Muestra temperatura, clima y detalles básicos.
+CSS personalizado
 
-Grid de cards Bootstrap que muestran 10 ciudades.
-Cada card incluye una imagen decorativa distinta, agregada manualmente.
+JavaScript (DOM + eventos)
 
-Usa JavaScript para obtener y mostrar datos dinámicamente.
+Git y GitHub para control de versiones
+
+🏞️ Vista Previa del Proyecto
+🏠 Home
+
+![alt text](image.png)
+
+📍 Detalle de Ciudad
+
+![alt text](image-1.png)
 
 📬 Autora
 
-Proyecto realizado por Christel Vial para el módulo 2 curso FrontEnd Trainee SENCE 2025. 
+Proyecto realizado por Christel Vial
+para el Módulo 2 del curso FrontEnd Trainee SENCE 2025.
+
+
+
+📌 Enlace del repositorio:
+👉 https://github.com/christelita/weather-frontend-m2
