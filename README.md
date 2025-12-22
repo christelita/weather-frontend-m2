@@ -56,10 +56,16 @@ _main.scss: Archivo principal que importa todos los parciales y compila el CSS f
 
 ---
 
+## 🚀 Tecnologías utilizadas
+* **HTML5** (Semántico)
+* **SASS** (Arquitectura modular)
+* **Bootstrap 5** (Layout y componentes)
+* **JavaScript** (Manipulación del DOM y datos Mock)
+
 ## 🗂️ Estructura del Proyecto
 
 
-
+```text
 weather/
 │
 ├── index.html                      # Archivo principal HTML
@@ -90,6 +96,7 @@ weather/
 │
 └── README.md                   # Documentación y descripción del proyecto
 
+```
 
 
 ---
