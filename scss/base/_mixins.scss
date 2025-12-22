@@ -1,0 +1,50 @@
+// Hover para “levantar” elementos
+@mixin hover-lift($distance: $place-card-hover-distance, $time: $place-card-hover-time) {
+  cursor: pointer;
+  transition: transform $time;
+
+  &:hover {
+    transform: translateY(-$distance);
+  }
+}
+
+// Animación de nieve
+@mixin snowflake($duration, $size, $left) {
+  position: fixed;
+  top: 0;
+  left: $left;
+  pointer-events: none;
+  font-size: $size;
+  color: $snowflake-color;
+  animation: snow $duration linear infinite;
+}
+
+// Animación reno
+@mixin reno-run($top: $reno-top, $font-size: $reno-font-size, $z-index: $reno-z-index) {
+  position: fixed;
+  top: $top;
+  left: 110%; // fuera de pantalla
+  font-size: $font-size;
+  animation: correrReno 20s linear infinite;
+  z-index: $z-index;
+  transform: scaleX(1);
+}
+
+// Papá Noel
+@mixin papa-noel($bottom: $papa-noel-bottom, $left: $papa-noel-left, $font-size: $papa-noel-font-size, $z-index: $papa-noel-z-index, $hover-y: $papa-noel-hover-y, $hover-scale: $papa-noel-hover-scale) {
+  position: fixed;
+  bottom: $bottom;
+  left: $left;
+  font-size: $font-size;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: $z-index;
+
+  &:hover {
+    transform: translateY($hover-y) scale($hover-scale);
+  }
+}
+
+
+
+

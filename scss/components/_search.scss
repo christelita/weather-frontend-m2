@@ -1,0 +1,26 @@
+.weather-app__search {
+  form {
+    input {
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+    }
+    button {
+      border-radius: 20px;
+      font-weight: $font-weight-bold;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  @media (max-width: $sm) {
+    form {
+      flex-direction: column;
+      input, button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+      button {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

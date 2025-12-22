@@ -1,0 +1,11 @@
+/* Archivo principal SASS */
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/animations';
+
+@import 'layout/header';
+@import 'layout/footer';
+
+@import 'components/place-card';
+@import 'components/search';
+

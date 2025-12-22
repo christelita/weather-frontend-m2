@@ -1,0 +1,46 @@
+/* ================== NIEVE ================== */
+@keyframes snow {
+  0% { transform: translateY(-10px); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.snowflake {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  font-size: 1rem;
+  color: $snowflake-color;
+  animation: snow linear infinite;
+}
+
+/* ================== RENO ================== */
+@keyframes correrReno {
+  0% { left: 110%; }
+  100% { left: -150px; }
+}
+
+.reno-corriendo {
+  position: fixed;
+  top: $reno-top;
+  left: 110%;
+  font-size: $reno-font-size;
+  animation: correrReno 20s linear infinite;
+  z-index: $reno-z-index;
+  transform: scaleX(1);
+}
+
+/* ================== PAPÁ NOEL ================== */
+.papa-noel {
+  position: fixed;
+  bottom: $papa-noel-bottom;
+  left: $papa-noel-left;
+  font-size: $papa-noel-font-size;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: $papa-noel-z-index;
+
+  &:hover {
+    transform: translateY($papa-noel-hover-y) scale($papa-noel-hover-scale);
+  }
+}

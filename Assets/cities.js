@@ -40,12 +40,12 @@ function renderHome(){
     col.className = 'col-12 col-sm-6 col-md-4 col-lg-3';
 
     col.innerHTML = `
-      <article class="card city-card h-100" data-id="${city.id}" role="button" tabindex="0">
-        <img src="Assets/cities/${city.id}.png" class="card-img-top city-img" alt="${city.name}">
+      <article class="card place-card h-100" data-id="${city.id}" role="button" tabindex="0">
+        <img src="Assets/cities/${city.id}.png" class="card-img-top place-card__img" alt="${city.name}">
         <div class="card-body d-flex flex-column justify-content-between">
           <div>
-            <h5 class="card-title">${city.name}</h5>
-            <p class="card-text text-muted mb-1">${city.state}</p>
+            <h5 class="card-title place-card__name">${city.name}</h5>
+            <p class="card-text text-muted mb-1 place-card__state">${city.state}</p>
           </div>
           <div class="d-flex justify-content-between align-items-center mt-3">
             <div class="fs-4 fw-bold">${city.temp}°C</div>
@@ -56,11 +56,11 @@ function renderHome(){
     `;
     grid.appendChild(col);
 
-    col.querySelector('.city-card').addEventListener('click', () => {
+    col.querySelector('.place-card').addEventListener('click', () => {
       location.hash = '#city=' + city.id;
     });
 
-    col.querySelector('.city-card').addEventListener('keypress', (e) => {
+    col.querySelector('.place-card').addEventListener('keypress', (e) => {
       if (e.key === 'Enter') location.hash = '#city=' + city.id;
     });
   });
@@ -143,3 +143,21 @@ for (let i = 0; i < 40; i++) {
   document.body.appendChild(snowflake);
 }
 
+/* BÚSQUEDA DE CIUDADES */
+const searchInput = document.getElementById('city-search');
+
+searchInput.addEventListener('input', (e) => {
+  const query = e.target.value.toLowerCase();
+
+  // Filtramos las cards según el nombre de la ciudad
+  CITIES.forEach(city => {
+    const col = document.querySelector(`.place-card[data-id="${city.id}"]`)?.parentElement;
+    if (!col) return;
+
+    if (city.name.toLowerCase().includes(query)) {
+      col.style.display = '';
+    } else {
+      col.style.display = 'none';
+    }
+  });
+});

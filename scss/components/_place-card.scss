@@ -1,0 +1,31 @@
+.place-card {
+  @include hover-lift(4px, 0.12s);
+
+  &__img {
+    height: 110px;
+    object-fit: cover;
+    border-bottom: 2px solid $color-place-card-border;
+  }
+
+  &__name {
+    font-weight: $font-weight-medium;
+  }
+
+  &__state {
+    color: $color-place-card-state;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.city-card {
+  @include hover-lift;
+}
+
+.temp-large {
+  font-size: $temp-large-size;
+  font-weight: $font-weight-bold;
+
+  @media (max-width: $sm) {
+    font-size: $temp-large-size-sm;
+  }
+}

@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="Assets/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
+  <link rel="stylesheet" href="css/main.css">
   <title>Weather Frontend - Módulo 2</title>
 
   <!-- Bootstrap CSS (CDN) -->
@@ -11,31 +11,15 @@
   <!-- Bootstrap Icons (CDN) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-  <style>
-    /* Pequeños ajustes */
-    .city-card { cursor:pointer; transition: transform .12s; }
-    .city-card:hover { transform: translateY(-4px); }
-    .temp-large { font-size: 4rem; font-weight: 800; }
-    @media (max-width:420px){
-      .temp-large { font-size: 2.2rem; }
-    }
-  </style>
 </head>
 <body>
-  <header class="bg-primary text-white shadow-sm" 
-style="background: linear-gradient(90deg, #0b6623, #b40000); border-bottom: 3px solid gold;">
-    <nav class="container navbar navbar-expand-lg navbar-dark" aria-label="Navegación principal">
-      <a class="navbar-brand" href="#" style="position: relative;">
+  <header class="weather-app__header">
+    <nav class="weather-app__navbar navbar navbar-expand-lg navbar-dark container" aria-label="Navegación principal">
+      <a class="weather-app__brand navbar-brand" href="#">
         <strong>  ☀️ El🌦️ tiempo en el🌍🎄 </strong>
+        <span class="weather-app__icon">🎅</span>
+        </a>
       
-         <span style="
-    position: absolute;
-    top: -10px;
-    left: -15px;
-    font-size: 1.4rem;
-    transform: rotate(-20deg);
-  ">🎅</span>
-  </a>
   <!--Botón de hamburguesa-->
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
@@ -43,16 +27,13 @@ style="background: linear-gradient(90deg, #0b6623, #b40000); border-bottom: 3px 
       <!--Menú-->
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home" style="text-shadow: 0 0 4px yellowgreen; font-weight:800; text-decoration-color: #0b6623;"> 🏮Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about" style="text-shadow: 0 0 4px yellowgreen; font-weight:800;"> 💫 Acerca</a></li>
+          <li class="nav-item"><a class="weather-app__nav-link nav-link" href="#home">🏮Home</a></li>
+          <li class="nav-item"><a class="weather-app__nav-link nav-link" href="#about">💫 Acerca</a></li>
         </ul>
       </div>
     </nav>
 </header>
 <div class="reno-corriendo">🦌🎁</div>
-
-
-
   <main class="container my-4" id="main">
     <!-- HOME -->
     <section id="home-view">
@@ -62,7 +43,15 @@ style="background: linear-gradient(90deg, #0b6623, #b40000); border-bottom: 3px 
           <small class="text-muted">Muestra de datos (mock). Haz clic en una card para ver detalle.</small>
         </div>
       </div>
+ <!-- Zona de búsqueda -->
+<section class="weather-app__search mb-4 row justify-content-left">
+  <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+    <input type="text" id="city-search" class="form-control" placeholder="Buscar ciudad...">
+  </div>
+</section>
 
+
+    <!-- Grid de cards -->
       <div id="cities-grid" class="row g-3">
         <!-- Cards se inyectan desde JS -->
       </div>
@@ -104,12 +93,13 @@ style="background: linear-gradient(90deg, #0b6623, #b40000); border-bottom: 3px 
     <!-- ABOUT -->
     <section id="about" class="mt-4">
       <h2 class="h5">Acerca</h2>
-      <p class="text-muted">Proyecto MVP del módulo 2. Implementación con HTML5 semántico, Bootstrap y JS para interacciones básicas. Repo: <em>weather-frontend-m2</em>.</p>
+      <p class="text-muted">Proyecto MVP del módulo 3. Refactorización de la interfaz de la aplicación de clima desarrollada en Módulo 2, aplicando metodologías
+de organización de estilos, preprocesamiento con SASS y el modelo de cajas para construir un layout más claro, mantenible y responsivo. Repo: <em>weather-frontend-m2</em>.</p>
     </section>
   </main>
 
-  <footer class="bg-light text-center py-3 mt-4">
-    <small>Weather Frontend - Módulo 2 • Entrega educativa • Hecho con 💙</small>
+  <footer class="weather-app__footer">
+    <small>Weather Frontend - Módulo 3 • Entrega educativa • Hecho con 💙</small>
   </footer>
 
   <!-- Bootstrap JS (CDN bundle includes Popper) -->

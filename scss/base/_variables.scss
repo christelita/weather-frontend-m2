@@ -1,0 +1,47 @@
+// ==================== Colores ====================
+$color-header-start: #0b6623;
+$color-header-end: #b40000;
+$color-header-border: gold;
+$color-header-text-shadow: yellowgreen;
+
+$color-footer-bg: #f8f9fa;
+$color-footer-text: #6c757d;
+
+$color-place-card-border: rgba(255, 255, 255, 0.4);
+$color-place-card-state: #6c757d;
+
+$snowflake-color: white;
+
+// ==================== Tipografía / tamaños ====================
+$font-weight-bold: 800;
+$font-weight-medium: 600;
+
+$temp-large-size: 4rem;
+$temp-large-size-sm: 2.2rem;
+
+$font-size-footer: 0.875rem;
+
+// ==================== Media queries ====================
+$sm: 420px;
+
+// ==================== Animaciones ====================
+$snowflake-min-size: 10px;
+$snowflake-max-size: 30px;
+$snowflake-min-duration: 2s;
+$snowflake-max-duration: 7s;
+
+$reno-font-size: 3rem;
+$reno-top: 20px;
+$reno-z-index: 9999;
+
+$papa-noel-font-size: 4rem;
+$papa-noel-bottom: 20px;
+$papa-noel-left: 20px;
+$papa-noel-z-index: 9999;
+$papa-noel-hover-y: -25px;
+$papa-noel-hover-scale: 1.2;
+
+// ==================== Otros ====================
+$place-card-hover-distance: 4px;
+$place-card-hover-time: 0.12s;
+

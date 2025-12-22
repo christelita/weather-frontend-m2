@@ -1,0 +1,138 @@
+@charset "UTF-8";
+/* Archivo principal SASS */
+/* ================== NIEVE ================== */
+@keyframes snow {
+  0% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+.snowflake {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  font-size: 1rem;
+  color: white;
+  animation: snow linear infinite;
+}
+
+/* ================== RENO ================== */
+@keyframes correrReno {
+  0% {
+    left: 110%;
+  }
+  100% {
+    left: -150px;
+  }
+}
+.reno-corriendo {
+  position: fixed;
+  top: 20px;
+  left: 110%;
+  font-size: 3rem;
+  animation: correrReno 20s linear infinite;
+  z-index: 9999;
+  transform: scaleX(1);
+}
+
+/* ================== PAPÁ NOEL ================== */
+.papa-noel {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  font-size: 4rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 9999;
+}
+.papa-noel:hover {
+  transform: translateY(-25px) scale(1.2);
+}
+
+.weather-app__header {
+  background: linear-gradient(90deg, #0b6623, #b40000);
+  border-bottom: 3px solid gold;
+  color: white;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.weather-app__navbar .weather-app__nav-link {
+  text-shadow: 0 0 4px yellowgreen;
+  font-weight: 800;
+}
+
+.weather-app__footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.place-card {
+  cursor: pointer;
+  transition: transform 0.12s;
+}
+.place-card:hover {
+  transform: translateY(-4px);
+}
+.place-card__img {
+  height: 110px;
+  object-fit: cover;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+}
+.place-card__name {
+  font-weight: 600;
+}
+.place-card__state {
+  color: #6c757d;
+  margin-bottom: 0.25rem;
+}
+
+.city-card {
+  cursor: pointer;
+  transition: transform 0.12s;
+}
+.city-card:hover {
+  transform: translateY(-4px);
+}
+
+.temp-large {
+  font-size: 4rem;
+  font-weight: 800;
+}
+@media (max-width: 420px) {
+  .temp-large {
+    font-size: 2.2rem;
+  }
+}
+
+.weather-app__search form input {
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+}
+.weather-app__search form button {
+  border-radius: 20px;
+  font-weight: 800;
+  padding: 0.5rem 1rem;
+}
+@media (max-width: 420px) {
+  .weather-app__search form {
+    flex-direction: column;
+  }
+  .weather-app__search form input, .weather-app__search form button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .weather-app__search form button {
+    margin-bottom: 0;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
