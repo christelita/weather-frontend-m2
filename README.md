@@ -124,11 +124,11 @@ weather/
 
 **Home**
 
-![Home](assets/screenshots/home.png)
+![Home](Assets/screenshots/home.png)
 
 **Detalle de Ciudad**
 
-![Detalle](assets/screenshots/detalle_card.png)
+![Detalle](Assets/screenshots/detalle_card.png)
 
 ---
 
