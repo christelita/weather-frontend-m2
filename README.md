@@ -141,4 +141,5 @@ Proyecto realizado por **Christel Vial** (con soporte de IA) para el **Módulo 3
 
 ## 📌 Repositorio
 
-[https://github.com/christelita/weather-frontend-m3](https://github.com/christelita/weather-frontend-m3)
+👉 https://github.com/christelita/weather-frontend-m2
+
