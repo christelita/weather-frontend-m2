@@ -1,4 +1,4 @@
-# 🌤️ Weather Frontend — Módulo 3
+# 🌤️ Weather Frontend — (Módulo 3) Módulo 4
 
 Proyecto educativo desarrollado para el **Módulo 3** del Bootcamp FrontEnd Trainee SENCE 2025.  
 Esta versión refactoriza la **interfaz de la App de Clima** del Módulo 2, enfocándose en **estilos, layout y modularización CSS** usando **SASS, BEM y Bootstrap**.
@@ -7,7 +7,13 @@ Esta versión refactoriza la **interfaz de la App de Clima** del Módulo 2, enfo
 
 ## Descripción
 
-Aplicación de clima que muestra información básica de 10 ciudades principales del mundo. Maneja datos ficticios (mock data) para mostrar temperatura, estado del tiempo, humedad, viento y un pronóstico semanal simulado. La interfaz está pensada para ser clara, accesible y responsiva, con una temática invernal y navideña (nieve y detalles visuales).
+Aplicación de clima que muestra información de 10 ciudades principales del mundo utilizando **datos ficticios (mock data)** definidos completamente en JavaScript.  
+La app presenta temperatura actual, estado del tiempo, humedad, viento y un **pronóstico semanal simulado**, todo renderizado dinámicamente en el DOM.
+
+En esta versión, además de la refactorización visual realizada en el Módulo 3, el proyecto incorpora un **foco claro en la lógica de programación** (Módulo 4): modelado de datos, uso de ciclos y condicionales, funciones reutilizables y cálculo de estadísticas semanales a partir del pronóstico diario.
+
+La interfaz es clara, accesible y responsiva, con una estética climática animada y sobria, preparando la aplicación para futuras mejoras como alertas meteorológicas o conexión a una API real.
+
 
 ## Metodología de estilos
 
@@ -15,18 +21,45 @@ Se utilizó la metodología BEM (Bloque, Elemento, Modificador) para mantener lo
 
 ## 🚀 Características Principales (MVP)
 
-- Página Home con grilla de ciudades usando **mock data**.
-- Cards con información de clima: icono, temperatura, estado y humedad.
-- Vista Detalle con información ampliada de la ciudad.
-- Navbar y Footer consistentes en todas las páginas.
-- Barra de busqueda modular que filtra ciudad a medida que se escribe descartando el resto
+- Página **Home** con grilla de ciudades generada dinámicamente desde JavaScript.
+- Datos de clima modelados en un **arreglo de objetos** (`CITIES`).
+- Cards con información de clima actual: icono, temperatura, estado y humedad.
+- **Vista Detalle** con información ampliada de la ciudad seleccionada.
+- Pronóstico semanal renderizado dinámicamente (día, mínima, máxima y estado).
+- **Estadísticas semanales calculadas en JavaScript**:
+  - Temperatura mínima, máxima y promedio de la semana.
+  - Conteo de días por tipo de clima.
+  - Resumen textual automático del clima semanal.
+- Navegación entre vistas mediante **hash routing** (`#home`, `#city=id`).
+- Barra de búsqueda que filtra ciudades en tiempo real.
 - Layout **responsivo**:
   - Móvil (≤420px): cards apiladas.
-  - Desktop (≥1024px): varias cards por fila con espaciado coherente.
-- **Decoración navideña**: nieve, reno corriendo y Papá Noel interactivo.
+  - Desktop (≥1024px): múltiples cards por fila.
 - Uso de **SASS con parciales, variables y mixins** para modularizar los estilos.
+- Control de versiones con **Git y GitHub** (commits descriptivos).
 
----
+## 🧠 Lógica y manejo de datos (Módulo 4)
+
+La lógica principal de la aplicación está implementada en **JavaScript Vanilla**, separando claramente los datos, el procesamiento y la manipulación del DOM.
+
+- Los datos de clima se modelan mediante un **arreglo de objetos** que representa las ciudades y su pronóstico semanal.
+- Cada ciudad contiene:
+  - Información actual (temperatura, estado, humedad, viento).
+  - Un arreglo `weekly` con el pronóstico diario de la semana.
+- Se utilizan **funciones reutilizables** para:
+  - Buscar una ciudad a partir de su `id`.
+  - Calcular estadísticas semanales a partir del pronóstico.
+- Se emplean **ciclos (`for`) y condicionales (`if / else`)** para:
+  - Calcular mínimos, máximos y promedios.
+  - Contar la cantidad de días por tipo de clima.
+  - Generar un resumen textual automático de la semana.
+- El DOM se actualiza dinámicamente para mostrar:
+  - Listado de ciudades.
+  - Vista de detalle.
+  - Pronóstico semanal.
+  - Estadísticas calculadas en tiempo real.
+- La navegación entre vistas se gestiona mediante un **router simple con `location.hash`**, sin recargar la página.
+
 
 ## Estructura SASS
 
@@ -36,7 +69,7 @@ _variables.scss: Variables globales como colores, tamaños y fuentes.
 
 _mixins.scss: Mixins reutilizables para animaciones y estilos repetitivos.
 
-_animations.scss: Animaciones personalizadas para efectos como nieve.
+(_animations.scss: Animaciones personalizadas para efectos como nieve.) eliminados por fin de temporada navideña
 
 _header.scss y _footer.scss: Estilos específicos para header y footer.
 
@@ -45,6 +78,9 @@ _place-card.scss: Estilos para las tarjetas de ciudades (cards) que muestran inf
 _search.scss: Estilos para la zona y barra de búsqueda, asegurando funcionalidad y diseño consistente.
 
 _main.scss: Archivo principal que importa todos los parciales y compila el CSS final.
+
+- Los estilos y animaciones climáticas se implementan mediante **SASS, mixins y animaciones CSS**.
+
 
 ## 📋 Requisitos del Proyecto
 
@@ -142,7 +178,7 @@ En próximas mejoras, se explorará y migraré a @use para aprovechar sus ventaj
 
 ## 📬 Autora
 
-Proyecto realizado por **Christel Vial** (con soporte de IA) para el **Módulo 3** del Bootcamp FrontEnd Trainee SENCE 2025.
+Proyecto realizado por **Christel Vial** (con soporte escencial y guia de IA) para el **Módulo 4** del Bootcamp FrontEnd Trainee SENCE 2025.
 
 ---
 
