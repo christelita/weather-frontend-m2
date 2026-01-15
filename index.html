@@ -16,8 +16,8 @@
   <header class="weather-app__header">
     <nav class="weather-app__navbar navbar navbar-expand-lg navbar-dark container" aria-label="Navegación principal">
       <a class="weather-app__brand navbar-brand" href="#">
-        <strong>  ☀️ El🌦️ tiempo en el🌍🎄 </strong>
-        <span class="weather-app__icon">🎅</span>
+        <strong>  El🌦️ tiempo en el🌍 </strong>
+        <span class="weather-app__icon"></span>
         </a>
       
   <!--Botón de hamburguesa-->
@@ -27,13 +27,13 @@
       <!--Menú-->
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="weather-app__nav-link nav-link" href="#home">🏮Home</a></li>
-          <li class="nav-item"><a class="weather-app__nav-link nav-link" href="#about">💫 Acerca</a></li>
+          <li class="nav-item"><a class="weather-app__nav-link nav-link active" href="#home">🏠Home</a></li>
+          <li class="nav-item"><a class="weather-app__nav-link nav-link" href="#about">📓 Acerca</a></li>
         </ul>
       </div>
     </nav>
 </header>
-<div class="reno-corriendo">🦌🎁</div>
+<div class="clima-animado">☀️⛅🌧️⛈️</div>
   <main class="container my-4" id="main">
     <!-- HOME -->
     <section id="home-view">
@@ -93,20 +93,22 @@
     <!-- ABOUT -->
     <section id="about" class="mt-4">
       <h2 class="h5">Acerca</h2>
-      <p class="text-muted">Proyecto MVP del módulo 3. Refactorización de la interfaz de la aplicación de clima desarrollada en Módulo 2, aplicando metodologías
+      <p class="text-muted">Proyecto MVP del módulo 4. Refactorización de la interfaz de la aplicación de clima desarrollada en Módulo 2, aplicando metodologías
 de organización de estilos, preprocesamiento con SASS y el modelo de cajas para construir un layout más claro, mantenible y responsivo. Repo: <em>weather-frontend-m2</em>.</p>
     </section>
   </main>
 
   <footer class="weather-app__footer">
-    <small>Weather Frontend - Módulo 3 • Entrega educativa • Hecho con 💙</small>
+    <small>Weather Frontend - Módulo 4 • Entrega educativa • Hecho con 💙</small>
   </footer>
 
+  <div class="weather-indicator" aria-hidden="true"> 
+  ☀️ ⛅ 🌧️ ⛈️
+</div>
   <!-- Bootstrap JS (CDN bundle includes Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="Assets/cities.js"></script>
-<div class="papa-noel">🎅</div>
 
 </body>
 </html>

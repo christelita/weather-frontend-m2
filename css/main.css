@@ -1,28 +1,6 @@
-@charset "UTF-8";
 /* Archivo principal SASS */
-/* ================== NIEVE ================== */
-@keyframes snow {
-  0% {
-    transform: translateY(-10px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh);
-    opacity: 0;
-  }
-}
-.snowflake {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  font-size: 1rem;
-  color: white;
-  animation: snow linear infinite;
-}
-
-/* ================== RENO ================== */
-@keyframes correrReno {
+/* ================== CLIMA ANIMADO ================== */
+@keyframes flotar {
   0% {
     left: 110%;
   }
@@ -30,40 +8,36 @@
     left: -150px;
   }
 }
-.reno-corriendo {
+.clima-animado {
   position: fixed;
-  top: 20px;
+  top: 33px;
   left: 110%;
-  font-size: 3rem;
-  animation: correrReno 20s linear infinite;
+  font-size: 2rem;
+  animation: flotar 16s linear infinite;
   z-index: 9999;
   transform: scaleX(1);
 }
 
-/* ================== PAPÁ NOEL ================== */
-.papa-noel {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  font-size: 4rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  z-index: 9999;
-}
-.papa-noel:hover {
-  transform: translateY(-25px) scale(1.2);
-}
-
 .weather-app__header {
-  background: linear-gradient(90deg, #0b6623, #b40000);
-  border-bottom: 3px solid gold;
-  color: white;
+  background: linear-gradient(90deg, #4facfe, #00c6ff);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.4);
+  color: #f1f5f9;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .weather-app__navbar .weather-app__nav-link {
-  text-shadow: 0 0 4px yellowgreen;
-  font-weight: 800;
+  color: #f1f5f9;
+  font-weight: 600;
+  text-shadow: none;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+.weather-app__navbar .weather-app__nav-link:hover {
+  color: #0b3c5d;
+}
+.weather-app__navbar .nav-link.active {
+  color: #0b3c5d;
+  border-bottom: 2px solid #0b3c5d;
+  font-weight: 700;
 }
 
 .weather-app__footer {

@@ -17,6 +17,10 @@ const CITIES = [
   { id: "cph", name: "Copenhagen, DK", temp: 7, state: "Viento", humidity: 70, wind: "20 km/h", coords: "55.68, 12.57", weekly: mockWeek() }
 ];
 
+function getCityById(id) {
+  return CITIES.find(city => city.id === id);
+}
+
 function mockWeek(){
   const days = [];
   const states = ["Soleado","Nublado","Lluvioso","Parcialmente nublado","Tormenta","Llovizna","Ventoso"];
@@ -29,6 +33,69 @@ function mockWeek(){
     });
   }
   return days;
+}
+
+/************************************
+ * ESTADÍSTICAS SEMANALES
+ ************************************/
+function calculateWeeklyStats(weeklyForecast) {
+  let minTemp = weeklyForecast[0].min;
+  let maxTemp = weeklyForecast[0].max;
+  let sumTemp = 0;
+
+  let weatherCount = {}; // { Soleado: 3, Lluvioso: 2, ... }
+
+  for (let i = 0; i < weeklyForecast.length; i++) {
+    const day = weeklyForecast[i];
+
+    // Mínimo y máximo
+    if (day.min < minTemp) minTemp = day.min;
+    if (day.max > maxTemp) maxTemp = day.max;
+
+    // Promedio (usamos el punto medio del día)
+    sumTemp += (day.min + day.max) / 2;
+
+    // Conteo de estados
+    if (weatherCount[day.state]) {
+      weatherCount[day.state]++;
+    } else {
+      weatherCount[day.state] = 1;
+    }
+  }
+
+  const avgTemp = Math.round(sumTemp / weeklyForecast.length);
+
+  // Estado predominante
+  let dominantWeather = "";
+  let maxDays = 0;
+
+  for (const state in weatherCount) {
+    if (weatherCount[state] > maxDays) {
+      maxDays = weatherCount[state];
+      dominantWeather = state;
+    }
+  }
+
+  // Resumen textual
+  let summary = "";
+
+  if (dominantWeather === "Soleado") {
+    summary = "Semana mayormente soleada ☀️";
+  } else if (dominantWeather === "Lluvioso" || dominantWeather === "Llovizna") {
+    summary = "Semana con varias lluvias 🌧️";
+  } else if (avgTemp < 10) {
+    summary = "Semana fría ❄️";
+  } else {
+    summary = "Semana con clima variable 🌤️";
+  }
+
+  return {
+    minTemp,
+    maxTemp,
+    avgTemp,
+    weatherCount,
+    summary
+  };
 }
 
 /* RENDER HOME */
@@ -92,7 +159,40 @@ function renderDetail(city){
     `;
     weekly.appendChild(col);
   });
+
+  // ===============================
+// MOSTRAR ESTADÍSTICAS SEMANALES
+// ===============================
+const stats = calculateWeeklyStats(city.weekly);
+
+// Si no existe el contenedor, lo creamos
+let statsContainer = document.getElementById("weekly-stats");
+
+if (!statsContainer) {
+  statsContainer = document.createElement("div");
+  statsContainer.id = "weekly-stats";
+  statsContainer.className = "mt-3 p-3 border rounded bg-light";
+
+  document
+    .getElementById("weekly-forecast")
+    .parentElement
+    .appendChild(statsContainer);
 }
+
+statsContainer.innerHTML = `
+  <h5>Estadísticas de la semana</h5>
+  <ul class="list-group mb-2">
+    <li class="list-group-item">🌡️ Mínima: ${stats.minTemp}°C</li>
+    <li class="list-group-item">🔥 Máxima: ${stats.maxTemp}°C</li>
+    <li class="list-group-item">📊 Promedio: ${stats.avgTemp}°C</li>
+  </ul>
+  <p><strong>${stats.summary}</strong></p>
+`;
+
+
+}
+
+
 
 /* VISTAS */
 const homeView = document.getElementById('home-view');
@@ -117,7 +217,7 @@ function handleHash(){
   const hash = location.hash || '#home';
   if (hash.startsWith('#city=')){
     const id = hash.split('=')[1];
-    const city = CITIES.find(c => c.id === id);
+    const city = getCityById(id);
     if (city) showDetail(city);
     else showHome();
   } else {
@@ -132,16 +232,6 @@ window.addEventListener('load', () => {
   handleHash();
 });
 
-/* NIEVE */
-for (let i = 0; i < 40; i++) {
-  const snowflake = document.createElement("div");
-  snowflake.classList.add("snowflake");
-  snowflake.innerHTML = "❄";
-  snowflake.style.left = Math.random() * 100 + "vw";
-  snowflake.style.animationDuration = 2 + Math.random() * 5 + "s";
-  snowflake.style.fontSize = (10 + Math.random() * 20) + "px";
-  document.body.appendChild(snowflake);
-}
 
 /* BÚSQUEDA DE CIUDADES */
 const searchInput = document.getElementById('city-search');
